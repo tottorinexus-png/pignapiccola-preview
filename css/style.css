@@ -990,3 +990,43 @@ body.reserve-open{
   color:#b59a82;
   border-bottom-color:#b59a82;
 }
+
+
+/* =====================================================================
+   V17 — AutoReserve を予約導線の最優先に
+   ===================================================================== */
+.reserve-modal-option.autoreserve{
+  background:#1d1916;
+  color:#fff;
+  border-color:#1d1916;
+}
+.reserve-modal-option.autoreserve small{
+  color:#cdb9a5;
+}
+.reserve-modal-option.autoreserve span{
+  color:#e9ddd0;
+}
+.reserve-v12-grid{
+  grid-template-columns:repeat(3,1fr);
+}
+.reserve-v12-autoreserve{
+  background:#1d1916;
+  color:#fff;
+}
+.reserve-v12-autoreserve:hover{
+  background:#2a231f;
+}
+.reserve-v12-autoreserve .reserve-v12-label{
+  color:#d3b697;
+}
+.reserve-v12-autoreserve p{
+  color:#c7b9ac;
+}
+.reserve-v12-autoreserve .reserve-v12-meta strong{
+  font-size:23px;
+}
+@media(max-width:900px){
+  .reserve-v12-grid{
+    grid-template-columns:1fr;
+  }
+}

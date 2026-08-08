@@ -45,3 +45,10 @@ Pigna piccola 制作サイト v12
 ・フッターの「Website by 鳥取ネクサス」を小さなリンクに変更
 ・リンク先：https://tottorinexus.jp/
 ・別タブで開く
+
+
+【v17 予約導線】
+・AutoReserveのネット予約を最優先に追加
+・ご予約ボタン → ネット予約 / 電話 / Instagram の3択
+・AutoReserve URL:
+https://autoreserve.com/ja/restaurants/ge9enJXRQieTBWj4b4tW
