@@ -12,3 +12,27 @@ if(toggle&&nav){toggle.addEventListener('click',()=>{const open=toggle.getAttrib
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.10,rootMargin:'0px 0px -5%'});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 const topBtn=document.querySelector('.to-top');if(topBtn){addEventListener('scroll',()=>topBtn.classList.toggle('show',scrollY>700),{passive:true});topBtn.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}))}
 const jumpLinks=[...document.querySelectorAll('.menu-jump a')];if(jumpLinks.length){const map=new Map(jumpLinks.map(a=>[a.getAttribute('href').slice(1),a]));const sections=[...map.keys()].map(id=>document.getElementById(id)).filter(Boolean);const spy=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){jumpLinks.forEach(a=>a.classList.remove('active'));map.get(e.target.id)?.classList.add('active')}})},{rootMargin:'-25% 0px -65%',threshold:0});sections.forEach(s=>spy.observe(s))}
+
+
+// Reservation drawer
+const reserveModal = document.getElementById('reserveModal');
+const reserveOpenButtons = document.querySelectorAll('[data-reserve-open]');
+const reserveCloseButtons = document.querySelectorAll('[data-reserve-close]');
+
+function openReserveModal(){
+  if(!reserveModal) return;
+  reserveModal.classList.add('is-open');
+  reserveModal.setAttribute('aria-hidden','false');
+  document.body.classList.add('reserve-open');
+}
+function closeReserveModal(){
+  if(!reserveModal) return;
+  reserveModal.classList.remove('is-open');
+  reserveModal.setAttribute('aria-hidden','true');
+  document.body.classList.remove('reserve-open');
+}
+reserveOpenButtons.forEach(btn => btn.addEventListener('click', openReserveModal));
+reserveCloseButtons.forEach(btn => btn.addEventListener('click', closeReserveModal));
+document.addEventListener('keydown', e => {
+  if(e.key === 'Escape') closeReserveModal();
+});
