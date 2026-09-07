@@ -1030,3 +1030,427 @@ body.reserve-open{
     grid-template-columns:1fr;
   }
 }
+
+
+/* =====================================================================
+   V18 — 実写真を主役にした最終版寄りの写真構成
+   ===================================================================== */
+
+/* Hero real photo */
+.hero__image--real{
+  object-position:center 54%;
+  filter:saturate(.82) contrast(1.06) brightness(.63) sepia(.025);
+}
+
+/* FOOD gallery */
+.food-gallery{
+  background:#15120f;
+  color:#f0e6db;
+  padding:clamp(74px,9vw,130px) clamp(18px,4vw,62px);
+}
+
+.food-gallery__head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:30px;
+  margin:0 0 38px;
+}
+
+.food-gallery__head small{
+  font:700 8px/1 var(--sans);
+  letter-spacing:.22em;
+  color:#c58b58;
+}
+
+.food-gallery__head h2{
+  margin:0;
+  font:400 clamp(46px,7vw,96px)/.95 var(--serif);
+  letter-spacing:-.045em;
+}
+
+.food-gallery__grid{
+  display:grid;
+  grid-template-columns:1.25fr .75fr .75fr;
+  grid-auto-rows:320px;
+  gap:3px;
+}
+
+.food-gallery__item{
+  margin:0;
+  overflow:hidden;
+  position:relative;
+  background:#221c17;
+}
+
+.food-gallery__item--wide{
+  grid-row:span 2;
+}
+
+.food-gallery__item img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  filter:saturate(.88) contrast(1.04) brightness(.9);
+  transition:transform .8s ease, filter .4s ease;
+}
+
+.food-gallery__item:hover img{
+  transform:scale(1.025);
+  filter:saturate(.95) contrast(1.04) brightness(.96);
+}
+
+/* SPACE */
+.space-section{
+  background:#eee3d4;
+  color:#1a1714;
+  padding:clamp(84px,10vw,150px) clamp(18px,5vw,76px);
+}
+
+.space-section__head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:30px;
+  margin-bottom:38px;
+}
+
+.space-section__head small{
+  font:700 8px/1 var(--sans);
+  letter-spacing:.22em;
+  color:#9f6c43;
+}
+
+.space-section__head h2{
+  margin:0;
+  font:400 clamp(48px,7vw,92px)/.95 var(--serif);
+  letter-spacing:-.045em;
+}
+
+.space-section figure{
+  margin:0;
+  position:relative;
+  overflow:hidden;
+  background:#201b17;
+}
+
+.space-section img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.space-section__main figure{
+  height:min(72vw,760px);
+  max-height:760px;
+}
+
+.space-section__main img{
+  object-position:center 54%;
+}
+
+.space-section__sub{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:3px;
+  margin-top:3px;
+}
+
+.space-section__sub figure{
+  height:460px;
+}
+
+.space-section__sub figure:first-child img{
+  object-position:center 52%;
+}
+
+.space-section__sub figure:last-child img{
+  object-position:center 58%;
+}
+
+.space-section figcaption{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  padding:26px 28px 24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:20px;
+  color:#fff;
+  background:linear-gradient(0deg,rgba(11,9,8,.78),transparent);
+}
+
+.space-section figcaption span{
+  font:700 8px/1 var(--sans);
+  letter-spacing:.2em;
+  color:#d2a06d;
+}
+
+.space-section figcaption strong{
+  font:500 16px/1.2 var(--sans);
+}
+
+/* Access exterior */
+.access__exterior{
+  grid-column:1 / -1;
+  margin:0 0 42px;
+  height:min(48vw,560px);
+  overflow:hidden;
+}
+
+.access__exterior img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 57%;
+  display:block;
+}
+
+/* Menu page real photo strip */
+.menu-photo-strip{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  height:260px;
+  gap:2px;
+  background:#17130f;
+}
+
+.menu-photo-strip img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  filter:saturate(.88) contrast(1.04) brightness(.9);
+}
+
+/* Keep restaurant photo atmosphere without over-darkening */
+.menu-hero > img{
+  filter:saturate(.82) contrast(1.05) brightness(.64) sepia(.02);
+  object-position:center 54%;
+}
+
+@media(max-width:900px){
+  .food-gallery__head,
+  .space-section__head{
+    display:block;
+  }
+
+  .food-gallery__head small,
+  .space-section__head small{
+    display:block;
+    margin-bottom:18px;
+  }
+
+  .food-gallery__grid{
+    grid-template-columns:1fr 1fr;
+    grid-auto-rows:300px;
+  }
+
+  .food-gallery__item--wide{
+    grid-row:span 1;
+  }
+
+  .food-gallery__item:first-child{
+    grid-column:1 / -1;
+    height:480px;
+  }
+
+  .space-section__sub{
+    grid-template-columns:1fr;
+  }
+
+  .space-section__sub figure{
+    height:460px;
+  }
+
+  .menu-photo-strip{
+    grid-template-columns:1fr 1fr;
+    height:auto;
+  }
+
+  .menu-photo-strip img{
+    height:220px;
+  }
+}
+
+@media(max-width:640px){
+  .hero__image--real{
+    object-position:58% center;
+  }
+
+  .food-gallery{
+    padding:70px 14px;
+  }
+
+  .food-gallery__head h2,
+  .space-section__head h2{
+    font-size:54px;
+  }
+
+  .food-gallery__grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    grid-auto-rows:210px;
+    gap:2px;
+  }
+
+  .food-gallery__item:first-child{
+    grid-column:1 / -1;
+    height:360px;
+  }
+
+  .food-gallery__item:last-child{
+    grid-column:1 / -1;
+    height:310px;
+  }
+
+  .space-section{
+    padding:74px 14px;
+  }
+
+  .space-section__main figure{
+    height:560px;
+  }
+
+  .space-section__sub figure{
+    height:360px;
+  }
+
+  .space-section figcaption{
+    padding:20px 18px 18px;
+  }
+
+  .space-section figcaption strong{
+    font-size:14px;
+  }
+
+  .access__exterior{
+    height:320px;
+    margin-bottom:30px;
+  }
+
+  .menu-photo-strip{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .menu-photo-strip img{
+    height:170px;
+  }
+}
+
+
+/* V20 — 公式夜メニューPDF反映 */
+.menu-source-note{
+  margin:10px 0 0;
+  max-width:560px;
+  font:500 12px/1.8 var(--sans);
+  color:rgba(28,24,20,.58);
+  letter-spacing:.03em;
+}
+.paper-alt .menu-source-note{color:rgba(28,24,20,.58)}
+.menu-detail{
+  margin:-4px 0 17px;
+  border-top:1px solid rgba(35,29,23,.08);
+}
+.menu-detail summary{
+  list-style:none;
+  cursor:pointer;
+  padding:10px 0 2px;
+  font:700 10px/1.4 var(--sans);
+  letter-spacing:.09em;
+  color:#9e6c46;
+}
+.menu-detail summary::-webkit-details-marker{display:none}
+.menu-detail summary::after{content:"＋";float:right;font-weight:400}
+.menu-detail[open] summary::after{content:"−"}
+.menu-detail p{
+  margin:8px 0 4px;
+  font:400 12px/1.85 var(--sans);
+  color:rgba(30,25,21,.72);
+}
+.menu-detail .pairing{
+  color:rgba(30,25,21,.62);
+}
+.boxed-note{
+  margin-top:18px!important;
+  padding:12px 14px;
+  border:1px solid rgba(113,71,45,.22);
+}
+.course-menu-grid article > em{
+  display:block;
+  margin:-5px 0 12px;
+  font:500 10px/1.4 var(--sans);
+  color:rgba(30,25,21,.55);
+  font-style:normal;
+}
+.wine-detail{margin-top:10px}
+.wine-detail summary{padding-top:8px}
+@media(max-width:640px){
+  .menu-detail p{font-size:12px;line-height:1.75}
+  .menu-source-note{font-size:11px}
+}
+
+
+/* =====================================================================
+   V21 — 昼メニュー正式データ反映
+   ===================================================================== */
+.lunch-course-feature{
+  display:grid;
+  grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
+  margin:clamp(76px,9vw,130px) 0 0;
+  background:#1b1713;
+  color:#f4eadf;
+}
+.lunch-course-feature__image{min-height:640px;overflow:hidden}
+.lunch-course-feature__image img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.88) contrast(1.03) brightness(.92)}
+.lunch-course-feature__copy{padding:clamp(46px,6vw,88px)}
+.lunch-course-feature__copy > small,.lunch-drinks-block .menu-subhead > small{color:#bf8758}
+.lunch-course-feature__copy h3{margin:12px 0 10px;font:400 clamp(45px,5.7vw,78px)/.95 var(--serif);letter-spacing:-.04em}
+.lunch-course-lead{margin:0 0 28px;color:#cfc0b1}
+.lunch-course-feature .big-price{display:block;margin:0 0 38px;font:400 clamp(30px,3.4vw,48px)/1 var(--serif)}
+.lunch-course-feature .big-price span{font:500 12px/1 var(--sans);letter-spacing:.04em}
+.lunch-course-list{list-style:none;margin:0;padding:0;border-top:1px solid rgba(255,255,255,.14)}
+.lunch-course-list li{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+.lunch-course-list span{font:500 10px/1.3 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:#b99373}
+.lunch-course-list b{font:500 15px/1.45 var(--sans)}
+.lunch-course-list small{grid-column:2;color:#bcae9f}
+.lunch-course-note{margin:26px 0 0;font-size:11px;line-height:1.8;color:#aa9b8c}
+.lunch-drinks-block{margin-top:clamp(80px,9vw,130px)}
+.lunch-drinks-block .menu-subhead{margin-bottom:36px}
+.lunch-drinks-grid,.lunch-wine-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.lunch-wine-grid{margin-top:28px}
+.lunch-drinks-block .category{padding:32px;background:#f7f1e8;border:1px solid rgba(41,32,24,.1)}
+.category-all-price{margin-left:auto;font:600 13px/1 var(--sans);white-space:nowrap}
+.compact-list{display:grid;grid-template-columns:1fr 1fr;gap:0 24px;margin-top:18px}
+.compact-list span{padding:12px 0;border-bottom:1px solid rgba(31,24,18,.12);font-size:14px}
+.lunch-wine-item{padding:17px 0;border-bottom:1px solid rgba(31,24,18,.12)}
+.lunch-wine-item h4{margin:0 0 9px;font:600 15px/1.45 var(--sans)}
+.lunch-wine-item p{margin:0;display:flex;flex-wrap:wrap;gap:12px 24px;font-size:12px;color:#786a5d}
+.lunch-course-teaser{display:grid;grid-template-columns:1fr auto;gap:48px;align-items:end;padding:clamp(44px,6vw,78px) clamp(20px,5vw,70px);background:#ece1d3;color:#1a1714}
+.lunch-course-teaser small{font:700 8px/1 var(--sans);letter-spacing:.2em;color:#a16f46}
+.lunch-course-teaser h2{margin:10px 0 12px;font:400 clamp(42px,5.5vw,74px)/.95 var(--serif);letter-spacing:-.04em}
+.lunch-course-teaser p{margin:0;max-width:700px;line-height:1.8}
+.lunch-course-teaser__price{min-width:230px;text-align:right}
+.lunch-course-teaser__price span{display:block;font-size:10px;margin-bottom:7px}
+.lunch-course-teaser__price strong{display:block;font:400 clamp(40px,5vw,70px)/.95 var(--serif)}
+.lunch-course-teaser__price a{display:inline-block;margin-top:14px;font-size:12px;border-bottom:1px solid currentColor}
+@media(max-width:900px){
+  .lunch-course-feature{grid-template-columns:1fr}
+  .lunch-course-feature__image{min-height:440px}
+  .lunch-drinks-grid,.lunch-wine-grid{grid-template-columns:1fr}
+  .lunch-course-teaser{grid-template-columns:1fr;align-items:start}
+  .lunch-course-teaser__price{text-align:left}
+}
+@media(max-width:640px){
+  .lunch-course-feature__image{min-height:350px}
+  .lunch-course-feature__copy{padding:42px 22px}
+  .lunch-course-list li{grid-template-columns:1fr;gap:8px}
+  .lunch-course-list small{grid-column:1}
+  .lunch-drinks-block .category{padding:24px 18px}
+  .compact-list{grid-template-columns:1fr}
+  .lunch-course-teaser{padding:52px 18px;gap:28px}
+}
