@@ -56,7 +56,7 @@
 
     <section class="menu-editorial reveal" aria-label="メニュー紹介">
       <figure class="menu-editorial__visual">
-        <img src="images/official-course.webp" alt="Pigna piccola コース料理" loading="lazy">
+        <img src="images/official-pasta-lunch-a.webp" alt="Pigna piccola パスタランチ" loading="lazy">
       </figure>
       <div class="menu-editorial__copy">
         <small>MENU</small>
@@ -84,28 +84,30 @@
         <a href="menu.html#lunch">詳細を見る ↗</a>
       </div>
     </section>
+    <section class="blackboard-section" id="today-menu" aria-labelledby="today-menu-title">
+      <div class="blackboard-section__head reveal">
+        <div>
+          <small>TODAY'S MENU</small>
+          <h2 id="today-menu-title">本日の黒板メニュー</h2>
+        </div>
+        <p class="blackboard-section__updated" data-blackboard-updated aria-live="polite">更新情報を確認中…</p>
+      </div>
 
-    <section class="official-menu-gallery official-menu-gallery--editorial" aria-label="料理写真">
-      <div class="official-menu-gallery__head reveal">
-        <small>FOOD</small>
-        <h2>料理</h2>
+      <div class="blackboard-section__frame reveal" data-blackboard-frame>
+        <img data-blackboard-image alt="Pigna piccola 本日の黒板メニュー" hidden>
+        <div class="blackboard-section__placeholder" data-blackboard-placeholder>
+          <span>TODAY'S MENU</span>
+          <strong>本日の黒板メニュー</strong>
+          <p>黒板の写真が更新されると、ここに表示されます。</p>
+        </div>
       </div>
-      <div class="official-menu-gallery__editorial-grid">
-        <figure class="official-menu-gallery__editorial-main reveal">
-          <img src="images/official-pasta-lunch-a.webp" alt="パスタランチセット" loading="lazy">
-        </figure>
-        <figure class="official-menu-gallery__editorial-sub reveal">
-          <img src="images/official-pasta-cacio.webp" alt="パスタ料理" loading="lazy">
-        </figure>
-        <figure class="official-menu-gallery__editorial-sub reveal">
-          <img src="images/official-pasta-lunch-b.webp" alt="パスタランチセット" loading="lazy">
-        </figure>
+
+      <div class="blackboard-section__foot reveal">
+        <p>季節や仕入れ状況により内容が変わります。最新の内容は黒板をご確認ください。</p>
+        <a href="menu.html">通常メニューを見る ↗</a>
       </div>
-      <a class="official-menu-gallery__link reveal" href="menu.html">メニューを見る ↗</a>
     </section>
-
-
-    <section class="course section" id="course">
+<section class="course section" id="course">
       <div class="section-label">COURSE</div>
       <div class="course__head reveal"><h2>コース</h2><p>事前予約制です。季節や仕入れにより内容が変わります。</p></div>
       <div class="course__grid">
@@ -121,7 +123,7 @@
     <section class="space-section" id="space" aria-label="店内と外観">
       <div class="space-section__head reveal">
         <small>SPACE</small>
-        <h2>店内・お席</h2>
+        <div><h2>店内</h2><p>1F / 2F</p></div>
       </div>
 
       <div class="space-section__main reveal">
@@ -142,14 +144,7 @@
         </figure>
       </div>
     </section>
-
-
-    <section class="menu-book-cta section">
-      <div class="section-label section-label--light">MENU BOOK</div>
-      <div class="menu-book-cta__inner reveal"><small>MENU BOOK</small><h2>メニュー</h2><p>ランチ・ディナー・コース・ワイン・ドリンクをまとめてご覧いただけます。</p><a href="menu.html">全メニューを見る ↗</a></div>
-    </section>
-
-    <section class="access section" id="access">
+<section class="access section" id="access">
       <figure class="access__exterior reveal"><img src="images/store-exterior.webp" alt="Pigna piccola 外観" loading="lazy"></figure>
       <div class="section-label">ACCESS / RESERVATION</div>
       <div class="access__info reveal"><img src="images/logo-clean.png" alt="Pigna piccola" class="access__logo"><dl>
@@ -234,6 +229,7 @@
     </section>
   </div>
 
+  <script src="js/blackboard.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
